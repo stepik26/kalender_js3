@@ -1,0 +1,32 @@
+body{
+    background-color: yellowgreen;
+}
+
+td, th{
+    border: 1px solid black;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+}
+
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#wrapper{
+    display: inline-block;
+}
+
+#calendar-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#prevMonth, #nextMonth{
+    background-color: beige;
+}
+
+#month, #year{
+    font-weight: bold;
+}
