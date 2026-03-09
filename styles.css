@@ -1,4 +1,21 @@
 body{
+    font-family: "Times New Roman", serif;
+    background-image: url('bild.jpg');
+}
+
+h1 {
+    color: #491c2f;
+}
+
+h2 {
+    color: #1c491c;
+}
+
+p {
+    color: #297897;
+}
+
+th{
     background-color: yellowgreen;
 }
 
@@ -28,5 +45,27 @@ table{
 }
 
 #month, #year{
+    font-weight: bold;
+}
+
+td:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.today{
+    background-color: yellow;
+}
+
+.weekend{
+    background-color: lightgray;
+}
+
+.selected{
+    background-color: orange;
     font-weight: bold;
 }
