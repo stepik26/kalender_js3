@@ -121,10 +121,20 @@ function renderMonth(currentYear, currentMonth) {
     } else if (index % 7 === 5 || index % 7 === 6) {
       day.classList.add("weekend"); // Wochenende
     }
-    // hide empty row
+    // leere Zeile verstecken
     const trs = document.querySelectorAll("tr");
     const lastTr = trs[trs.length - 1];
     const tds = lastTr.querySelectorAll("td");
+    let emptyRow = true;
+    for (let i = 0; i < tds.length; i++) {
+      if (tds[i].textContent !== "") {
+        emptyRow = false;
+        break;
+      }
+    }
+    if (emptyRow) {
+      lastTr.style.display = "none"; // die Zeile wird versteckt
+    } else lastTr.style.display = "table-row"; // zurück zum normalen Style
   }
 
   //calendar-header anpassen
@@ -157,8 +167,8 @@ function renderCalendar() {
     renderMonth(currentYear, currentMonth);
     const td = document.querySelectorAll("td");
     for (el of td) {
-          el.classList.remove("selected"); //die letzte Markierung entfernt
-        }
+      el.classList.remove("selected"); //die letzte Markierung entfernt
+    }
   };
 
   nextMonth = document.querySelector("#nextMonth");
@@ -171,8 +181,8 @@ function renderCalendar() {
     renderMonth(currentYear, currentMonth);
     const td = document.querySelectorAll("td");
     for (el of td) {
-          el.classList.remove("selected"); //die letzte Markierung entfernt
-        }
+      el.classList.remove("selected"); //die letzte Markierung entfernt
+    }
   };
   dayClickEvents();
   //----------------------------------------------------------------------------------------------------------------------//
