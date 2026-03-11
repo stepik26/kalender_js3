@@ -69,3 +69,8 @@ button:hover{
     background-color: orange;
     font-weight: bold;
 }
+
+ul{
+    padding-left: 0;
+    list-style-position: inside;
+}

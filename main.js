@@ -19,8 +19,8 @@ function dayClickEvents() {
         td[i].classList.add("selected");
         const daySelected = td[i].textContent;
         const selectedDate = new Date(currentYear, currentMonth, daySelected);
-
         renderInfo(selectedDate);
+        getHistoryData(currentMonth, daySelected);
       }
     };
   }
@@ -185,7 +185,39 @@ function renderCalendar() {
     }
   };
   dayClickEvents();
-  //----------------------------------------------------------------------------------------------------------------------//
+  //--------------------------------------------------------------------------//
+}
+
+function getHistoryData(currentMonth, daySelected) {
+  const url = `https://history.muffinlabs.com/date/${currentMonth+1}/${daySelected}`;
+
+  //HTTP-GET-Anfrage senden
+  fetch(url)
+    .then(response => {
+      if(!response.ok){
+        throw new Error("Abruf fehlgeschlagen: " + response.status);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      // 5 historische Events werden genommen
+      const events = data.data.Events.slice(0, 5);
+      const historyData = document.querySelector("#historyData");
+      historyData.innerHTML = "<h2>Historische Daten</h2>"
+      const ul = document.createElement("ul");
+      for (const item of events){
+        const li = document.createElement("li");
+        li.textContent = `${item.year}: ${item.text}`;
+        ul.appendChild(li);
+      }
+       historyData.appendChild(ul);
+    })
+
+    .catch(error => {
+      console.error(error);
+    });
 }
 renderInfo(new Date());
 renderCalendar();
+getHistoryData(month, day);
