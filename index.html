@@ -9,91 +9,104 @@
   </head>
   <body>
     <h1>Kalenderblatt vom <span class="date"></span></h1>
-     <p>
-        Der <span class="date"></span> ist ein <span class = "weekday"></span> und
-        zwar der <span id="counter"></span> <span class="weekday"></span> im Monat
-        <span class="month1"></span> des Jahres <span id="year1"></span>. Es handelt
-        sich um den <span id="dayOfYear"></span>. Tag des Jahres, was bedeutet, dass es noch <span id="daysLeft"></span> Tage bis
-        zum Jahresende sind. Der Monat <span class="month1"></span> hat insgesamt <span id="daysInMonth"></span> Tage.
-      </p>
-    <div id="wrapper">
-      <div id="calendar-header">
-        <button id="prevMonth">&larr;</button>
-        
-          <span id="month"></span><span id="year"></span>
-        
-        <button id="nextMonth">&rarr;</button>
-        
-      </div>
-      <table>
-        <tr>
-          <th>Mo</th>
-          <th>Di</th>
-          <th>Mi</th>
-          <th>Do</th>
-          <th>Fr</th>
-          <th>Sa</th>
-          <th>So</th>
-        </tr>
+    <p>
+      Der <span class="date"></span> ist ein <span class="weekday"></span> und
+      zwar der <span id="counter"></span> <span class="weekday"></span> im Monat
+      <span class="month1"></span> des Jahres <span id="year1"></span>. Es
+      handelt sich um den <span id="dayOfYear"></span>. Tag des Jahres, was
+      bedeutet, dass es noch <span id="daysLeft"></span> Tage bis zum Jahresende
+      sind. Der Monat <span class="month1"></span> hat insgesamt
+      <span id="daysInMonth"></span> Tage.
+    </p>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
+    <div id="wrapper">
+      <div id="cal">
+        <div id="calendar-header">
+          <div id="prevMonthId">
+            <button id="prevMonth">&larr;</button>
+          </div>
+
+          <div id="monthId">
+            <span id="month"></span><span id="year"></span>
+          </div>
+
+          <div id="nextMonthId">
+            <button id="nextMonth">&rarr;</button>
+          </div>
+        </div>
+
+        <table>
+          <tr>
+            <th>Mo</th>
+            <th>Di</th>
+            <th>Mi</th>
+            <th>Do</th>
+            <th>Fr</th>
+            <th>Sa</th>
+            <th>So</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="bild">
+        <img id="randomImg" src="" alt="Zufallsbild" />
+      </div>
     </div>
 
     <div id="historyData"></div>
-    
   </body>
 </html>

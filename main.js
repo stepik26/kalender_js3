@@ -19,6 +19,7 @@ function dayClickEvents() {
         td[i].classList.add("selected");
         const daySelected = td[i].textContent;
         const selectedDate = new Date(currentYear, currentMonth, daySelected);
+        getRandomImage();
         renderInfo(selectedDate);
         getHistoryData(currentMonth, daySelected);
       }
@@ -188,8 +189,8 @@ function renderCalendar() {
   //--------------------------------------------------------------------------//
 }
 
-function getHistoryData(currentMonth, daySelected) {
-  const url = `https://history.muffinlabs.com/date/${currentMonth+1}/${daySelected}`;
+function getHistoryData(month, day) {
+  const url = `https://history.muffinlabs.com/date/${month+1}/${day}`;
 
   //HTTP-GET-Anfrage senden
   fetch(url)
@@ -200,7 +201,6 @@ function getHistoryData(currentMonth, daySelected) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       // 5 historische Events werden genommen
       const events = data.data.Events.slice(0, 5);
       const historyData = document.querySelector("#historyData");
@@ -218,6 +218,14 @@ function getHistoryData(currentMonth, daySelected) {
       console.error(error);
     });
 }
+
+function getRandomImage(){
+  let randomNum = Math.floor(Math.random() * 1000);
+  randomImg = document.querySelector('#randomImg');
+  randomImg.src = `https://picsum.photos/333?random=${randomNum}`;
+}
+
 renderInfo(new Date());
 renderCalendar();
 getHistoryData(month, day);
+getRandomImage();

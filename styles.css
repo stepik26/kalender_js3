@@ -32,13 +32,26 @@ table{
 }
 
 #wrapper{
-    display: inline-block;
+    display: flex;
+    align-items: stretch;
+}
+
+#cal{
+    flex: 1;
+}
+
+#bild{
+    flex: 1;
+
 }
 
 #calendar-header{
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+    max-width: 302px;
 }
+
 
 #prevMonth, #nextMonth{
     background-color: beige;
@@ -46,6 +59,7 @@ table{
 
 #month, #year{
     font-weight: bold;
+    margin: 10px;
 }
 
 td:hover{
@@ -74,3 +88,4 @@ ul{
     padding-left: 0;
     list-style-position: inside;
 }
+
